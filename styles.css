@@ -1,0 +1,15 @@
+h1 {
+    background-color: aqua;
+}
+
+section {
+    margin: auto;
+    width: 200px;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+}

@@ -26,6 +26,10 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/index.html'))
 })
 
+app.get('/css', (req, res) => {
+    res.sendFile(path.join(__dirname, '/styles.css'))
+})
+
 app.get('/api/students', (req, res) => {
     res.status(200).send(students)
 })
@@ -53,6 +57,7 @@ app.post('/api/students', (req, res) => {
            res.status(400).send('You must enter a name.')
        } else {
            res.status(400).send('That student already exists.')
+           rollbar.warning('Tried to repeat student')
        }
    } catch (err) {
        console.log(err)
